@@ -1,4 +1,4 @@
-var reminders = [{time: new Date(), message: "Kevin is beside me"}];
+var reminders = [];
 var completed = [];
 
 function compare(a, b) {
@@ -27,11 +27,6 @@ function addReminder(t, m) {
 function deleteReminder(index) {
 	completed.addCompleted(reminders[index]);
 	reminders.splice(index, 1);
-}
-
-function addReminder(t, m) {
-	reminders.push({time: t, message: m});
-	reminders.sort(compare);
 }
 
 function save() {
