@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add Reminder</title>
-</head>
-<body>
-	What reminder would you like to add? <br>
+	<title>Just Do It!</title>
+	<link rel="stylesheet" href="popup.css">
 	
+	<script>"popup.js"</script>
+</head>
 
-
+<body>
+	<img src="logo-big.png" alt="logo" id="logo" height="80px" width="80px">
+	
+	<section id="reminder">
+		<textarea></textarea>
+		
+		<p>Enter the date: /dd/mm/yy/ </p>
+		<ul id = "date">
+			<li><input type="number" id="day" value=""></li>
+			<li><input type="number" id="month" value=""></li>
+			<li><input type="number" id="year" value=""></li>
+		</ul>
+		
+		<p> Enter the 24-hour time: </p>
+		<ul id = "time">
+			<li><input type="number" id="hours" value=""></li>
+			<li><input type="number" id="minutes" value=""></li>
+		</ul>
+		
+		<button type="button" onclick = "">Set!</button>
+	<section>
+	
+	<footer>
+		<ul>
+			<li><a href="index.html">Manage</a></li>
+			<li><button type="button" id="close">Close</li>
+		</ul>
+	</footer>
 </body>
 </html>
