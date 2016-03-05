@@ -1,6 +1,6 @@
 chrome.alarms.onAlarm.addListener(function(alarm) {
-	reminders = getReminders();
-	currDate = new Date();
+	var reminders = getReminders();
+	var currDate = new Date();
 	counter = 0;
 
 	while (counter < reminders.length() && currTime <= reminder[counter].time) {
@@ -9,3 +9,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 		counter += 1;
 	}
 });
+
+chrome.windows.onRemoved.addListener(function(windowId) {
+	save();
+})
