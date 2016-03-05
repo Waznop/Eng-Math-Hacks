@@ -36,8 +36,9 @@ function save() {
 
 function load() {
 	chrome.storage.local.get('reminders', function (result) {
-		if (!chrome.runtime.error)
+		if (!chrome.runtime.error) {
 			reminders = result.reminders;
+		}
 	});
 	chrome.storage.local.get('completed', function(result) {
 		if (!chrome.runtime.error)
