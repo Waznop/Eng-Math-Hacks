@@ -53,7 +53,7 @@ function setDeleted(index) {
 
 function deleteDeleted() {
 	var length = reminders.length
-	for (int i = length; i >= 0; i--)
+	for (var i = length; i >= 0; i--)
 		if(reminders[i].deleted)
 			deleteReminder(i);
 }
@@ -65,12 +65,12 @@ function deleteReminder(index) {
 }
 
 function deleteReminders(indices) {
-	for (int i = 0; i < indices.length; i++) {
-		if (reminders[indices[i]].deleted = true;
+	for (var i = 0; i < indices.length; i++) {
+		reminders[indices[i]].deleted = true;
 	}
-	for (int i = reminders.length - 1; i >= 0; i--) {
+	for (var i = reminders.length - 1; i >= 0; i--) {
 		if (reminders[i].deleted)
-			deletedReminder(i);
+			deleteReminder(i);
 	}
 }
 
