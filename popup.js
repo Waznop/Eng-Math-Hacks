@@ -70,14 +70,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var reminders = getReminders();
 */
-		
+
 function myFn() {
-	alert((document.getElementById('message').value) + " @ " + (document.getElementById('datetime').value));
+	alert((document.getElementById('txtarea').value) + " @ " + (document.getElementById('datetime').value));
 	
-	/*
 	addReminder((document.getElementById('datetime').value),
 				(document.getElementById('message').value));
 	
+	/*
 	reminders = getReminders();
 	
 	var addr = document.getElementById('testVal');
@@ -88,6 +88,17 @@ function myFn() {
 	for (var i = 0; i < reminders.length; i++) {
 		addr.innerHTML = addr.innerHTML + reminders[i].message +" @ "+ reminders[i].time +" \n";
 	}
-	
 	*/
 }
+
+function windowClose() {
+	//window.open('', '_self', ''); 
+	window.close();
+}
+
+
+$(document).ready(function() {
+	$('#set').on("click", myFn);
+	$('#close').on("click", windowClose);
+	
+});
