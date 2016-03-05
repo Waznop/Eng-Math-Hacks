@@ -1,45 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Just Do It!</title>
 	<link rel="stylesheet" href="popup.css">
-
+	
 	<script src="popup.js"></script>
 </head>
 
 <body>
-	<img src="logo-small.png" alt="logo" id="logo" height="40px" width="40px">
+	<header>
+		<img src="logo-small.png" alt="logo" id="logo">
+		<h1>Just Do It!</h1>
+	</header>
 	
-	<section id="reminder">
-		
+	<textarea></textarea>
+	
+	<section id="inputs">
 		<div id="date">
-		<p> Enter the date: (dd/mm/yy) </p>
-		<ul>
-			<li><input type="number" id="day" value=""></li>
-			<li><input type="number" id="month" value=""></li>
-			<li><input type="number" id="year" value=""></li>
-		</ul>
+			<p> Enter the date: (dd/mm/yy) </p>
+			<ul>
+				<li><input type="number" id="day" value=""></li>
+				<li><input type="number" id="month" value=""></li>
+				<li><input type="number" id="year" value=""></li>
+			</ul>
 		</div>
 		
 		<button type="button" id="set" onclick = "">Set!</button>
 		
 		<div id="time">
-		<p> Enter the 24-hour time: </p>
-		<ul>
-			<li><input type="number" id="hours" value=""></li>
-			<li><input type="number" id="minutes" value=""></li>
-		</ul>
+			<p> Enter the 24-hour time: </p>
+			<ul>
+				<li><input type="number" id="hours" value=""></li>
+				<li><input type="number" id="minutes" value=""></li>
+			</ul>
 		</div>
-	<section>
+	</section>
 	
-	<div id = "footer">
-		<ul>
-			<li><a href="index.html">Manage</a></li>
-			<li><button type="button" id="close">Close</li>
-		</ul>
-	</div>
+	
+	<footer>
+		<a href="index.html">Manage</a>
+		<button type="button" id="close">Close</button>
 	</footer>
-
-</ul>
 </body>
 </html>
