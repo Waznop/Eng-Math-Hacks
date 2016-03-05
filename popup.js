@@ -49,6 +49,6 @@ document.getElementById("set").onclick = function() {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
+    chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.5} );
                     window.close();
 });
