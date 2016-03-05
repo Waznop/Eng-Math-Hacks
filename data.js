@@ -1,14 +1,9 @@
-
-var reminders = [{time: "2016-02-04T11:24", message: "It's almost noon!", deleted: false}, 
-{time: "2016-02-04T11:42", message: "It's getting warmer.", deleted: false},
-{time: "2016-02-05T11:59", message: "One more minute!", deleted: false}];
+var reminders = [];
 var completed = [];
 
 // {time: "2016-02-04T11:24", message: "It's almost noon!", deleted: false}
 // {time: "2016-02-04T11:42", message: "It's getting warmer.", deleted: false}
 // {time: "2016-02-04T11:59", message: "One more minute!", deleted: false}
-
-alert("data.js");    
 
 function compare(a, b) {
 	var dateA = stringToDate(a.time);
@@ -40,11 +35,8 @@ function load() {
 }
 
 function addCompleted(reminder) {
-	alert("add completed");
 	completed.push(reminder);
-	alert("sort completed");
 	completed.sort(compare);
-	alert("save completed");
 	save();
 }
 
@@ -59,52 +51,23 @@ function addReminder(t, m) {
 	save();
 }
 
-function setDeleted(index) {
-	reminders[index].deleted = true;
-}
-
-function deleteDeleted() {
-	var length = reminders.length
-	for (var i = length; i >= 0; i--) {
-		if(reminders[i].deleted)
-			deleteReminder(i);
-	}
-}
-
 function deleteReminder(index) {
-	alert("here?");
 	addCompleted(reminders[index]);
-	alert("here???");
-
 	reminders.splice(index, 1);
-
-	alert("HEREEE??????");
-	//save();
 }
 
 function deleteReminders(indices) {
-	//alert(reminders);
-
 	for (var i = 0; i < indices.length; i++) {
 		reminders[indices[i]].deleted = true;
 	}
-
 	
-	for (var i = 0; i < reminders.length; i++)
-		alert(reminders[i].deleted);
-
 	for (var i = 0; i < reminders.length; i++) {
-		alert(i);		
-		alert(reminders.length);
 		if (reminders[i].deleted) {
-			alert("if");
 			deleteReminder(i);
 			i--;
-			alert("endif");
 		}
 	}
-	alert(reminders);
-	//save();
+	save();
 }
 
 function stringToDate(s) {
@@ -123,4 +86,3 @@ function getReminders() {
 function getCompleted() {
 	return completed;
 }
-
