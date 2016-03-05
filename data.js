@@ -29,11 +29,6 @@ function deleteReminder(index) {
 	reminders.splice(index, 1);
 }
 
-function addReminder(t, m) {
-	reminders.push({time: t, message: m});
-	reminders.sort(compare);
-}
-
 function save() {
 	chrome.storage.local.set({'reminders': reminders}, function() {});
 	chrome.storage.local.set({'completed': completed}, function() {});
