@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 	
 	<script src="data.js"></script>
+	<script src="popup.js"></script>
 </head>
 
 <body>
@@ -26,10 +27,14 @@
 		<p> Enter a date: </p>
 		
 		<button type="button" id="set"
-		 onclick="fn(){addReminder((document.getElementById('message').value),
-		 (document.getElementById('datetime').value))};">Set!</button>
+		onclick="addReminder((document.getElementById('message')).value,
+		                     (document.getElementById('datetime')).value)">Set!</button>
 		 
 		<input type="datetime-local" id="datetime"></input>
+		
+		
+		<p id="msgtemp">msg<p>
+		<p id="timetemp">time<p>
 		
 		<br class="clear">
 	</section>
