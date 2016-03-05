@@ -49,6 +49,15 @@ function load() {
 	});
 }
 
+function stringToDate(s) {
+	var year = s.substring(0,4);
+	var month = s.substring(5,7);
+	var day = s.substring(8,10);
+	var hours = s.substring(11,13);
+	var minutes = s.substring(14);
+	return newDate(year, month, day, hours, minutes, 0, 0);
+}
+
 function getReminders() {
 	return reminders;
 }

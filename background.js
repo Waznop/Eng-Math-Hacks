@@ -1,7 +1,16 @@
 load();
 alert("");
 var reminders = getReminders();
-alert(reminders[0].message);
+
+function printObject(o) {
+  var out = '';
+  for (var p in o) {
+    out += p + ': ' + o[p] + '\n';
+  }
+  alert(out);
+}
+
+alert(JSON.stringify (reminders[0].time));
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
 	//alert("hi");
