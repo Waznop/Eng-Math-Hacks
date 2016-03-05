@@ -87,12 +87,6 @@
         </div>
     </header>
 
-    <script>
-        for (i = 0; i < reminders.length; i++) {
-            document.write(reminders[i].time + " " + reminders[i].message + "<br>");
-        }
-    </script>
-
     <!-- Set Reminder! Section -->
     <section id="set!">
         <div class="container">
@@ -157,17 +151,7 @@
 
                 <ul id="editable" class="list-group">
 
-                    <script>
-                        // [{time: new Date(2016, 3, 11, 3, 44, 0, 0), message: "hello world"}, {time: new Date(2016, 3, 12, 5, 44, 0, 0), message: "goodbye world"}]
-                        // var reminders = getReminders();
-                        var htmlcode = "";
-
-                        for (var i = 0; i < reminders.length; i++) {
-                            htmlcode += "<li class=\"list-group-item\" id=\"" + i + "\" idtime=\"" + reminders[i].time + "\"><div align=\"center\"><p>" + reminders[i].message + "</p><font size=\"2\">" + reminders[i].time + "</font></div><div align=\"right\"><font color=\"red\"><i class=\"js-remove\" color=\"red\">✖</i> </font> </div></li>";
-                        }
-
-                        document.write(htmlcode);
-                    </script>
+                    <script src="js/generateHTML.js"></script>
                     
                     <li class="list-group-item" id="10" idtime="1914-12-20T08:00">
                         <div align="center">
@@ -200,38 +184,11 @@
 
                 </ul>
 
-                <script>
-                    var toDel = [];
-
-                    Sortable.create(editable, {
-                        filter: ".js-remove",
-                        onFilter: function (evt) {
-                            var item = evt.item;
-                                ctrl = evt.target;
-                            if (Sortable.utils.is(ctrl, ".js-remove")) {
-                                item.parentNode.removeChild(item);
-                                toDel.push(item.id);
-                            }
-                        }
-                    });
-
-                    function sendSave() {
-                        var cur = new Date();
-                        var lstOfRems = document.getElementById('editable').childNodes;
-                        for (var i = 0; i < lstOfRems.length; i++) {
-                            var remDate = stringToDate(lstOfRems[i].idtime);
-                            if (remDate <= cur) {
-                                toDel.push(lstOfRems[i].id);
-                            }
-                        }
-                        deleteReminders(toDel);
-                        location.reload();
-                    }
-                </script>
+                <script src="js/swiper.js"></script>
 
                 <br>
                 <br>
-                <form name="saveRems" id="saveButton" onsubmit="sendSave()">
+                <form name="saveRems" id="saveButton">
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12 text-center">
