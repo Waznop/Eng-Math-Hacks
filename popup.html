@@ -4,36 +4,31 @@
 	<title>Just Do It!</title>
 	<link rel="stylesheet" href="popup.css">
 	
-	<script src="popup.js"></script>
+	<!-- Custom fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	
+	<script src="data.js"></script>
 </head>
 
 <body>
 	<header>
 		<img src="logo-small.png" alt="logo" id="logo">
 		<h1>Just Do It!</h1>
+		
+		<br class="clear">
 	</header>
 	
 	<textarea id="message"></textarea>
 	
 	<section id="inputs">
-		<div id="date">
-			<p> Enter the date: (dd/mm/yy) </p>
-			<ul>
-				<li><input type="number" id="day" value=""></li>
-				<li><input type="number" id="month" value=""></li>
-				<li><input type="number" id="year" value=""></li>
-			</ul>
-		</div>
+		<p> Enter a date: </p>
+		<button type="button" id="set"
+		 onclick="stringToDate(document.getElementById('datetime').value)">Set!</button>
+		<input type="datetime-local" id="datetime"></input>
 		
-		<button type="button" id="set">Set!</button>
-		
-		<div id="time">
-			<p> Enter the 24-hour time: </p>
-			<ul>
-				<li><input type="number" id="hours" value=""></li>
-				<li><input type="number" id="minutes" value=""></li>
-			</ul>
-		</div>
+		<br class="clear">
 	</section>
 	
 	
