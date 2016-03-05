@@ -104,6 +104,7 @@
                         function addRem() {
                             var m = document.forms["sentMessage"]["msg"].value;
                             var t = document.forms["sentMessage"]["time"].value;
+                            addReminder(t, m);
                         }
                     </script>
 
@@ -159,6 +160,7 @@
                         // [{time: new Date(2016, 3, 11, 3, 44, 0, 0), message: "hello world"}, {time: new Date(2016, 3, 12, 5, 44, 0, 0), message: "goodbye world"}]
                         var reminders = getReminders();
                         var htmlcode = "";
+                        var remArray = [];
 
                         for (var i = 0; i < reminders.length; i++) {
                             htmlcode += "<li class=\"list-group-item\"><div align=\"center\"><p>" + reminders[i].message + "</p><font size=\"2\">" + reminders[i].time + "</font></div><div align=\"right\"><font color=\"red\"><i class=\"js-remove\" color=\"red\">✖</i> </font> </div></li>";
