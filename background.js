@@ -1,6 +1,4 @@
 load();
-alert("background2.js");
-addReminder("2016-02-05T02:00", "plz");
 
 document.addEventListener('DOMContentLoaded', function () {
     chrome.alarms.create("myAlarm", {delayInMinutes: 0.05, periodInMinutes: 0.5} );0
