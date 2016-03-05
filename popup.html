@@ -24,8 +24,11 @@
 	
 	<section id="inputs">
 		<p> Enter a date: </p>
+		
 		<button type="button" id="set"
-		 onclick="stringToDate(document.getElementById('datetime').value)">Set!</button>
+		 onclick="fn(){addReminder((document.getElementById('message').value),
+		 (document.getElementById('datetime').value))};">Set!</button>
+		 
 		<input type="datetime-local" id="datetime"></input>
 		
 		<br class="clear">
@@ -33,8 +36,9 @@
 	
 	
 	<footer>
-		<a href="index.html">Manage</a>
-		<button type="button" id="close">Close</button>
+		<a href="index.html" target="_blank">Manage</a>
+		<button type="button" id="close"
+		onclick="window.open('', '_self', ''); window.close();">Close</button>
 	</footer>
 </body>
 </html>

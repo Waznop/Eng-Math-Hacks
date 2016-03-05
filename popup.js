@@ -33,6 +33,13 @@ function validDate (year, month, day, hours, minutes) {
 }
 */
 
+function addReminder(msg, time) {
+	document.getElementById('msgtemp').innerHTML = (document.getElementById('message').value);
+	document.getElementById('timetemp').innerHTML = (document.getElementById('datetime').value));
+	
+}
+
+/*
 document.getElementById("set").onclick = function() {
 	alert("setting Date()");
 	
@@ -52,3 +59,4 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
                     window.close();
 });
+*/

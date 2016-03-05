@@ -27,7 +27,7 @@ header {
 
 header h1{
 	float: left;
-	margin: 6px 5px 5px 5px;
+	margin: 10px 5px 5px 5px;
 	text-align: left;
 	vertical-align: middle;
 	text-transform: uppercase;
@@ -45,12 +45,11 @@ header h1{
 }
 
 textarea {
+	white-space: pre-wrap;
 	margin: 10px auto;
 	display: block;
 	width: 375px;
 	height: 80px;
-	
-	
 }
 
 
@@ -77,8 +76,7 @@ textarea {
 }
 
 #set {
-	font-size: 18px;
-	font-family: sans-serif;
+	font-size: 16px;
 	padding: 5px;
 	
 	background: none;
@@ -113,7 +111,6 @@ footer a {
 	margin: 5px 9px;
 	
 	font-size: 16px;
-	font-family: sans-serif;
 	
 	color: black;
 	background-color: #F0F0F0;
@@ -133,7 +130,6 @@ footer button {
 	margin: 5px 10px;
 	
 	font-size: 16px;
-	font-family: sans-serif;
 	
 	background: none;
 	background-color: #F0F0F0;
