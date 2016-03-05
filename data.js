@@ -1,4 +1,4 @@
-var reminders = [{time: new Date(2016, 3, 5, 1, 41, 0, 0), message: "lol"}];
+var reminders = [];
 var completed = [];
 
 function compare(a, b) {
