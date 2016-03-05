@@ -16,10 +16,13 @@ function compare(a, b) {
 		return 0;
 }
 
-function save() {
+function save(callback) {
 	chrome.storage.local.clear(function() {
-		chrome.storage.local.set({'reminders': reminders}, function() {});
-		chrome.storage.local.set({'completed': completed}, function() {});
+		chrome.storage.local.set({'reminders': reminders}, function() {
+			chrome.storage.local.set({'completed': completed}, function() {});
+		});
+		
+		callback();
 	});
 }
 

@@ -23,10 +23,6 @@ $(document).ready(function(){
 		var m = document.forms["setRem"]["msg"].value;
 	    var t = document.forms["setRem"]["time"].value;
 	    addReminder(t, m);
-	    var reminders = getReminders();
-	    for (var i = 0; i < reminders.length; i++) {
-	    	alert(reminders[i].message);
-	    }
 	    location.reload();
 	});
 });
