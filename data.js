@@ -55,3 +55,10 @@ function getReminders() {
 function getCompleted() {
 	return completed;
 }
+
+chrome.storage.local.get('reminders', function (result) {
+	if (!chrome.runtime.error) {
+		reminders = result.reminders;
+		alert(reminders[0].message);
+	}
+});

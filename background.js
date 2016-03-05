@@ -1,4 +1,5 @@
 var reminders = [{time: new Date(), message: "Kevin is beside me"}];
+load();
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
 	alert("hi");
