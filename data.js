@@ -42,9 +42,20 @@ function deleteCompleted(index) {
 }
 
 function addReminder(t, m) {
-	reminders.push({time: t, message: m});
+	reminders.push({time: t, message: m, deleted: false});
 	reminders.sort(compare);
 	save();
+}
+
+function setDeleted(index) {
+	reminders[index].deleted = true;
+}
+
+function deleteDeleted() {
+	var length = reminders.length
+	for (int i = length; i >= 0; i--)
+		if(reminders[i].deleted)
+			deleteReminder(i);
 }
 
 function deleteReminder(index) {
