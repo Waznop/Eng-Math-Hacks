@@ -35,16 +35,18 @@ function addReminder(t, m) {
 }
 
 function save() {
-	chrome.storage.local.set({'reminders': reminders});
-	chrome.storage.local.set({'completed': completed});
+	chrome.storage.local.set({'reminders': reminders}, function() {});
+	chrome.storage.local.set({'completed': completed}, function() {});
 }
 
 function load() {
 	chrome.storage.local.get('reminders', function (result) {
-		reminders = result;
+		if (!chrome.runtime.error)
+			reminders = result.reminders;
 	});
 	chrome.storage.local.get('completed', function(result) {
-		completed = result;
+		if (!chrome.runtime.error)
+			completed = result.completed;
 	});
 }
 
@@ -55,10 +57,3 @@ function getReminders() {
 function getCompleted() {
 	return completed;
 }
-
-chrome.storage.local.get('reminders', function (result) {
-	if (!chrome.runtime.error) {
-		reminders = result.reminders;
-		alert(reminders[0].message);
-	}
-});
