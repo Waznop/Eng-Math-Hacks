@@ -1,6 +1,8 @@
 var reminders = [];
 var completed = [];
 
+alert("jameson");
+
 function compare(a, b) {
 	if (a.time < b.time)
 		return -1;
@@ -30,6 +32,7 @@ function deleteReminder(index) {
 }
 
 function save() {
+	chrome.storage.local.clear();
 	chrome.storage.local.set({'reminders': reminders}, function() {});
 	chrome.storage.local.set({'completed': completed}, function() {});
 }
