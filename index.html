@@ -29,6 +29,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="data.js"></script>
+
 </head>
 
 <body id="page-top" class="index">
@@ -54,10 +56,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Set!</a>
+                        <a href="#set!">Set!</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Manage</a>
+                        <a href="#manage">Manage</a>
                     </li>
                 </ul>
             </div>
@@ -83,7 +85,7 @@
     </header>
 
     <!-- Set Reminder! Section -->
-    <section id="contact">
+    <section id="set!">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -97,18 +99,26 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+
+                    <script>
+                        function addRem() {
+                            var m = document.forms["sentMessage"]["msg"].value;
+                            var t = document.forms["sentMessage"]["time"].value;
+                        }
+                    </script>
+
+                    <form name="sentMessage" id="contactForm" onsubmit="addRem()" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
-                                <input type="text" class="form-control" placeholder="Message" id="msg" required data-validation-required-message="Please enter a message for the reminder.">
+                                <input type="text" name="msg" class="form-control" placeholder="Message" id="msg" required data-validation-required-message="Please enter a message for the reminder.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Time and Date</label>
-                                <input type="datetime-local" class="form-control" placeholder="Time and Date" id="time" required data-validation-required-message="Please enter a time and date for the reminder.">
+                                <input type="datetime-local" name="time" class="form-control" placeholder="Time and Date" id="time" required data-validation-required-message="Please enter a time and date for the reminder.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -127,7 +137,7 @@
     </section>
 
     <!-- Manage Reminders Section -->
-    <section id="portfolio">
+    <section id="manage">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -144,6 +154,20 @@
                 <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
 
                 <ul id="editable" class="list-group">
+
+                    <script>
+                        // [{time: new Date(2016, 3, 11, 3, 44, 0, 0), message: "hello world"}, {time: new Date(2016, 3, 12, 5, 44, 0, 0), message: "goodbye world"}]
+                        var reminders = getReminders();
+                        var htmlcode = "";
+
+                        for (var i = 0; i < reminders.length; i++) {
+                            htmlcode += "<li class=\"list-group-item\"><div align=\"center\"><p>" + reminders[i].message + "</p><font size=\"2\">" + reminders[i].time + "</font></div><div align=\"right\"><font color=\"red\"><i class=\"js-remove\" color=\"red\">✖</i> </font> </div></li>";
+                        }
+
+                        document.write(htmlcode);
+                    </script>
+
+                    
                     <li class="list-group-item">
                         <div align="center">
                             <p>Do my CS 146 homework!!</p>
@@ -172,6 +196,8 @@
                         </div>
                         <div align="right"> <font color="red"> <i class="js-remove" color="red">✖</i> </font> </div>
                     </li>
+                    
+
                 </ul>
 
                 <script>
