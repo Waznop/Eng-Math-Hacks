@@ -14,7 +14,7 @@
 	"permissions":["storage", "alarms"],
 
 	"background": {
-		"scripts": ["background.js"],
+		"scripts": ["data.js", "background.js"],
 		"persistent": false
 	}
 
