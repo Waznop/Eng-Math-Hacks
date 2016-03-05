@@ -2,7 +2,7 @@
 var alarmClock = {
 
         onHandler : function(e) {
-            chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
+            
                     window.close();
         },
 
@@ -19,11 +19,6 @@ var alarmClock = {
         }
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-    alarmClock.setup();
-});
-
-
 function validDate (year, month, day, hours, minutes) {
 	var currentDate = Date();
 	
@@ -31,7 +26,6 @@ function validDate (year, month, day, hours, minutes) {
 	    (year < 0))
 	
 }
-*/
 
 document.addEventListener('DOMContentLoaded', function () {
     chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
@@ -63,8 +57,13 @@ document.getElementById("set").onclick = function() {
 	save();
 };
 
+
 document.addEventListener('DOMContentLoaded', function () {
+<<<<<<< Updated upstream
     chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
                     window.close();
+=======
+    alarmClock.setup();
+>>>>>>> Stashed changes
 });
 */

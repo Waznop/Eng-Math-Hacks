@@ -1,3 +1,4 @@
+
 var reminders = [{time: "2016-02-04T11:24", message: "It's almost noon!", deleted: false}, 
 {time: "2016-02-04T11:42", message: "It's getting warmer.", deleted: false},
 {time: "2016-02-05T11:59", message: "One more minute!", deleted: false}];
@@ -91,9 +92,6 @@ function deleteReminders(indices) {
 	
 	for (var i = 0; i < reminders.length; i++)
 		alert(reminders[i].deleted);
-	
-
-
 
 	for (var i = 0; i < reminders.length; i++) {
 		alert(i);		
@@ -125,3 +123,4 @@ function getReminders() {
 function getCompleted() {
 	return completed;
 }
+
