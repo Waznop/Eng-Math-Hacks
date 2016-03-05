@@ -1,3 +1,4 @@
+/*
 var alarmClock = {
 
         onHandler : function(e) {
@@ -13,11 +14,17 @@ var alarmClock = {
         setup: function() {
             var a = document.getElementById('alarmOn');
             a.addEventListener('click',  alarmClock.onHandler);
-            var a = document.getElementById('alarmOff');
-            a.addEventListener('click',  alarmClock.offHandler);
+            var b = document.getElementById('alarmOff');
+            b.addEventListener('click',  alarmClock.offHandler);
         }
 };
 
 document.addEventListener('DOMContentLoaded', function () {
     alarmClock.setup();
+});
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    chrome.alarms.create("myAlarm", {delayInMinutes: 0.1, periodInMinutes: 0.1} );
+                    window.close();
 });
