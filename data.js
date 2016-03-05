@@ -64,6 +64,16 @@ function deleteReminder(index) {
 	save();
 }
 
+function deleteReminders(indices) {
+	for (int i = 0; i < indices.length; i++) {
+		if (reminders[indices[i]].deleted = true;
+	}
+	for (int i = reminders.length - 1; i >= 0; i--) {
+		if (reminders[i].deleted)
+			deletedReminder(i);
+	}
+}
+
 function stringToDate(s) {
 	var year = s.substring(0,4);
 	var month = s.substring(5,7);
