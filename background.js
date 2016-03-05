@@ -1,11 +1,13 @@
-chrome.alarms.onAlarm.addListener(function(alarm) {
-	var reminders = getReminders();
-	var currDate = new Date();
-	counter = 0;
+var reminders = [{time: new Date(), message: "Kevin is beside me"}];
 
-	while (counter < reminders.length() && currTime <= reminder[counter].time) {
-		alert(reminder[counter].message);
-		deleteReminder(counter);
+chrome.alarms.onAlarm.addListener(function(alarm) {
+	alert("hi");
+
+	var currDate = new Date();
+	var counter = 0;
+	
+	while (counter < reminders.length && currDate >= reminders[counter].time) {
+		alert(reminders[counter].message);
 		counter += 1;
 	}
 });
@@ -13,3 +15,4 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 chrome.windows.onRemoved.addListener(function(windowId) {
 	save();
 })
+	
