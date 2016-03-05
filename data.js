@@ -1,7 +1,7 @@
-var reminders = [];
+var reminders = [{time: "2016-02-04T10:13", message: "Good morning!"}, {time: "2016-02-05T10:13", message: "It's less cold now."}];
 var completed = [];
 
-alert("jameson");
+alert("data.js");    
 
 function compare(a, b) {
 	if (a.time < b.time)
@@ -55,7 +55,7 @@ function stringToDate(s) {
 	var day = s.substring(8,10);
 	var hours = s.substring(11,13);
 	var minutes = s.substring(14);
-	return newDate(year, month, day, hours, minutes, 0, 0);
+	return new Date(year, month, day, hours, minutes, 0, 0);
 }
 
 function getReminders() {
