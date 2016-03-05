@@ -1,3 +1,11 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-	window.open("popup.html", "Add Reminder", "height = 200, width = 150")
+chrome.alarms.onAlarm.addListener(function(alarm) {
+	reminders = getReminders();
+	currDate = new Date();
+	counter = 0;
+
+	while (counter < reminders.length() && currTime <= reminder[counter].time) {
+		alert(reminder[counter].message);
+		deleteReminder(counter);
+		counter += 1;
+	}
 });
