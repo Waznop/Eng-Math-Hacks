@@ -1,4 +1,4 @@
-var reminders = [{time: "2016-06-04T11:24", message: "It's almost noon!", deleted: false}, {time: "2016-07-04T11:42", message: "It's getting warmer.", deleted: false}];
+var reminders = [];
 var completed = [];
 
 // {time: "2016-02-04T11:24", message: "It's almost noon!", deleted: false}
@@ -17,20 +17,23 @@ function compare(a, b) {
 }
 
 function save() {
-	chrome.storage.local.clear();
-	chrome.storage.local.set({'reminders': reminders}, function() {});
-	chrome.storage.local.set({'completed': completed}, function() {});
+	chrome.storage.local.clear(function() {
+		chrome.storage.local.set({'reminders': reminders}, function() {});
+		chrome.storage.local.set({'completed': completed}, function() {});
+	});
 }
 
-function load() {
+function load(callback) {
 	chrome.storage.local.get('reminders', function (result) {
 		if (!chrome.runtime.error) {
 			reminders = result.reminders;
 		}
-	});
-	chrome.storage.local.get('completed', function(result) {
+		chrome.storage.local.get('completed', function(result) {
 		if (!chrome.runtime.error)
 			completed = result.completed;
+		});
+
+		callback();
 	});
 }
 

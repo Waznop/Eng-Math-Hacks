@@ -16,7 +16,6 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 		counter += 1;
 	}
 	
-	alert(toDelete);
 	deleteReminders(toDelete);
 });
 
