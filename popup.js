@@ -66,4 +66,28 @@ document.addEventListener('DOMContentLoaded', function () {
     alarmClock.setup();
 >>>>>>> Stashed changes
 });
+
+
+var reminders = getReminders();
 */
+		
+function myFn() {
+	alert((document.getElementById('message').value) + " @ " + (document.getElementById('datetime').value));
+	
+	/*
+	addReminder((document.getElementById('datetime').value),
+				(document.getElementById('message').value));
+	
+	reminders = getReminders();
+	
+	var addr = document.getElementById('testVal');
+	
+	addr.innerHTML = "";
+	alert(reminders[i].message + " @ " + reminders[i].time);
+	
+	for (var i = 0; i < reminders.length; i++) {
+		addr.innerHTML = addr.innerHTML + reminders[i].message +" @ "+ reminders[i].time +" \n";
+	}
+	
+	*/
+}
