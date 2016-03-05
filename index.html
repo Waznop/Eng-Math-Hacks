@@ -102,13 +102,13 @@
 
                     <script>
                         function addRem() {
-                            var m = document.forms["sentMessage"]["msg"].value;
-                            var t = document.forms["sentMessage"]["time"].value;
+                            var m = document.forms["setRem"]["msg"].value;
+                            var t = document.forms["setRem"]["time"].value;
                             addReminder(t, m);
                         }
                     </script>
 
-                    <form name="sentMessage" id="contactForm" onsubmit="addRem()" novalidate>
+                    <form name="setRem" id="setButton" onsubmit="addRem()" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Message</label>
@@ -160,49 +160,48 @@
                         // [{time: new Date(2016, 3, 11, 3, 44, 0, 0), message: "hello world"}, {time: new Date(2016, 3, 12, 5, 44, 0, 0), message: "goodbye world"}]
                         var reminders = getReminders();
                         var htmlcode = "";
-                        var remArray = [];
 
                         for (var i = 0; i < reminders.length; i++) {
-                            htmlcode += "<li class=\"list-group-item\"><div align=\"center\"><p>" + reminders[i].message + "</p><font size=\"2\">" + reminders[i].time + "</font></div><div align=\"right\"><font color=\"red\"><i class=\"js-remove\" color=\"red\">✖</i> </font> </div></li>";
+                            htmlcode += "<li class=\"list-group-item\" id=\"" + i + "\" idtime=\"" + reminders[i].time + "\"><div align=\"center\"><p>" + reminders[i].message + "</p><font size=\"2\">" + reminders[i].time + "</font></div><div align=\"right\"><font color=\"red\"><i class=\"js-remove\" color=\"red\">✖</i> </font> </div></li>";
                         }
 
                         document.write(htmlcode);
                     </script>
-
                     
-                    <li class="list-group-item">
+                    <li class="list-group-item" id="10" idtime="1914-12-20T08:00">
                         <div align="center">
                             <p>Do my CS 146 homework!!</p>
                             <font size="2">ASAP lol</font>
                         </div>
                         <div align="right"> <font color="red"> <i class="js-remove" color="red">✖</i> </font> </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item" id="11" idtime="1914-12-20T08:00">
                         <div align="center">
                             <p>Buy a chocolate bar</p>
                             <font size="2">Monday, Mar 3, 2016, 12:40 AM</font>
                         </div>
                         <div align="right"> <font color="red"> <i class="js-remove" color="red">✖</i> </font> </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item" id="12" idtime="1914-12-20T08:00">
                         <div align="center">
                             <p>Stop procrastinating</p>
                             <font size="2">i cri evrytim</font>
                         </div>
                         <div align="right"> <font color="red"> <i class="js-remove" color="red">✖</i> </font> </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item" id="13" idtime="1914-12-20T08:00">
                         <div align="center">
                             <p>Just doooo it</p>
                             <font size="2">Saturday, Mar 5, 2016, 2:10 PM</font>
                         </div>
                         <div align="right"> <font color="red"> <i class="js-remove" color="red">✖</i> </font> </div>
                     </li>
-                    
 
                 </ul>
 
                 <script>
+                    var toDel = [];
+
                     Sortable.create(editable, {
                         filter: ".js-remove",
                         onFilter: function (evt) {
@@ -210,10 +209,34 @@
                                 ctrl = evt.target;
                             if (Sortable.utils.is(ctrl, ".js-remove")) {
                                 item.parentNode.removeChild(item);
+                                toDel.push(item.id);
                             }
                         }
                     });
+
+                    function sendSave() {
+                        var cur = new Date();
+                        var lstOfRems = document.getElementById('editable').childNodes;
+                        for (var i = 0; i < lstOfRems.length; i++) {
+                            var remDate = stringToDate(lstOfRems[i].idtime);
+                            if (remDate <= cur) {
+                                toDel.push(lstOfRems[i].id);
+                            }
+                        }
+                        deleteReminders(toDel);
+                    }
                 </script>
+
+                <br>
+                <br>
+                <form name="saveRems" id="saveButton" onsubmit="sendSave()">
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12 text-center">
+                            <button type="submit" class="btn btn-success btn-lg">Save!</button>
+                        </div>
+                    </div>
+                </form>
 
             </div>
         </div>
