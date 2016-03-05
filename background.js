@@ -1,8 +1,10 @@
 load();
+alert("");
 var reminders = getReminders();
+alert(reminders[0].message);
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
-	alert("hi");
+	//alert("hi");
 
 	var currDate = new Date();
 	var counter = 0;
@@ -16,4 +18,3 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 chrome.windows.onRemoved.addListener(function(windowId) {
 	save();
 })
-	
