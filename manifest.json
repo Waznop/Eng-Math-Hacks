@@ -16,6 +16,8 @@
 	"background": {
 		"scripts": ["data.js", "background.js"],
 		"persistent": true
-	}
-
+	},
+	"web_accessible_resources": [
+		"*.html"
+	]
 }
