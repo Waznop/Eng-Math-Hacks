@@ -1,4 +1,4 @@
-var reminders = [];
+var reminders = [{time: "2016-06-04T11:24", message: "It's almost noon!", deleted: false}, {time: "2016-07-04T11:42", message: "It's getting warmer.", deleted: false}];
 var completed = [];
 
 // {time: "2016-02-04T11:24", message: "It's almost noon!", deleted: false}
@@ -54,32 +54,20 @@ function addReminder(t, m) {
 function deleteReminder(index) {
 	addCompleted(reminders[index]);
 	reminders.splice(index, 1);
-<<<<<<< HEAD
-=======
-	//save();
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 }
 
 function deleteReminders(indices) {
 	for (var i = 0; i < indices.length; i++) {
 		reminders[indices[i]].deleted = true;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 	for (var i = 0; i < reminders.length; i++) {
 		if (reminders[i].deleted) {
 			deleteReminder(i);
 			i--;
 		}
 	}
-<<<<<<< HEAD
 	save();
-=======
-	//save();
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 }
 
 function stringToDate(s) {
