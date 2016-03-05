@@ -7,9 +7,11 @@
 	text-decoration: none;
 }
 
-section {
+/*
+#date, #time, section, footer {
 	display: block;
 }
+*/
 
 body {
 	margin: auto;
@@ -25,25 +27,62 @@ body {
 	border-radius: 10px;
 }
 
+/*
 #reminder {
-	float: left:
+	float: left;
 	clear: right;
+	
+	border: 2px solid grey;
 }
+*/
 
-#reminder > textarea {
-	margin: 10px 0px 10px 10px;
+#reminder textarea {
+	float: left;
+	margin: 8px 0px 10px 10px;
 	width: 280px;
-	height: 78px;
+	height: 80px;
 	
+	border: 2px solid grey;
 }
 
-#date {
-	
-	
+#date p{
+	float: left;
+	width: 50%;
 }
+
+#date li {
+	float: left;
+}
+
+#date li > input {
+	width: 30px;
+}
+
+#set {
+	float: right;
+	width: 80px;
+	height: 40px;
+}
+
+#time p{
+	float: left;
+	width: 50%;
+}
+
+#time li {
+	float: left;
+}
+
+#time li > input {
+	width: 30px;
+}
+
 
 #footer {
+	clear: both;
 	width: 100%;
 	height: 50px;
 	
+	border: 2px solid red;
 }
+*/

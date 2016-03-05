@@ -11,29 +11,32 @@
 	<img src="logo-big.png" alt="logo" id="logo" height="80px" width="80px">
 	
 	<section id="reminder">
-		<textarea></textarea>
 		
-		<p>Enter the date: /dd/mm/yy/ </p>
-		<ul id = "date">
+		<div id="date">
+		<p> Enter the date: (dd/mm/yy) </p>
+		<ul>
 			<li><input type="number" id="day" value=""></li>
 			<li><input type="number" id="month" value=""></li>
 			<li><input type="number" id="year" value=""></li>
 		</ul>
+		</div>
 		
+		<button type="button" id="set" onclick = "">Set!</button>
+		
+		<div id="time">
 		<p> Enter the 24-hour time: </p>
-		<ul id = "time">
+		<ul>
 			<li><input type="number" id="hours" value=""></li>
 			<li><input type="number" id="minutes" value=""></li>
 		</ul>
-		
-		<button type="button" onclick = "">Set!</button>
+		</div>
 	<section>
 	
-	<footer>
+	<div id = "footer">
 		<ul>
 			<li><a href="index.html">Manage</a></li>
 			<li><button type="button" id="close">Close</li>
 		</ul>
-	</footer>
+	</div>
 </body>
 </html>
