@@ -12,25 +12,6 @@ function compare(a, b) {
 		return 0;
 }
 
-function addCompleted(reminder) {
-	reminders.push(reminder);
-	reminders.sort(compare);
-}
-
-function deleteCompleted(index) {
-	completed.splice(index, 1);
-}
-
-function addReminder(t, m) {
-	reminders.push({time: t, message: m});
-	reminders.sort(compare);
-}
-
-function deleteReminder(index) {
-	completed.addCompleted(reminders[index]);
-	reminders.splice(index, 1);
-}
-
 function save() {
 	chrome.storage.local.clear();
 	chrome.storage.local.set({'reminders': reminders}, function() {});
@@ -47,6 +28,29 @@ function load() {
 		if (!chrome.runtime.error)
 			completed = result.completed;
 	});
+}
+
+function addCompleted(reminder) {
+	reminders.push(reminder);
+	reminders.sort(compare);
+	save();
+}
+
+function deleteCompleted(index) {
+	completed.splice(index, 1);
+	save();
+}
+
+function addReminder(t, m) {
+	reminders.push({time: t, message: m});
+	reminders.sort(compare);
+	save();
+}
+
+function deleteReminder(index) {
+	completed.addCompleted(reminders[index]);
+	reminders.splice(index, 1);
+	save();
 }
 
 function stringToDate(s) {
