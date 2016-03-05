@@ -72,13 +72,8 @@ function deleteDeleted() {
 }
 
 function deleteReminder(index) {
-	alert("here?");
 	addCompleted(reminders[index]);
-	alert("here???");
-
 	reminders.splice(index, 1);
-
-	alert("HEREEE??????");
 	//save();
 }
 
@@ -89,21 +84,12 @@ function deleteReminders(indices) {
 		reminders[indices[i]].deleted = true;
 	}
 
-	
-	for (var i = 0; i < reminders.length; i++)
-		alert(reminders[i].deleted);
-
 	for (var i = 0; i < reminders.length; i++) {
-		alert(i);		
-		alert(reminders.length);
 		if (reminders[i].deleted) {
-			alert("if");
 			deleteReminder(i);
 			i--;
-			alert("endif");
 		}
 	}
-	alert(reminders);
 	//save();
 }
 

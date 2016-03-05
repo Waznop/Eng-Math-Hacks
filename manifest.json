@@ -15,7 +15,7 @@
 
 	"background": {
 		"scripts": ["data.js", "background.js"],
-		"persistent": false
+		"persistent": true
 	}
 
 }
