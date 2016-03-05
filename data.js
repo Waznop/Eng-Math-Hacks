@@ -1,4 +1,4 @@
-var reminders = [{time: "2016-02-04T10:13", message: "Good morning!"}, {time: "2016-02-05T10:13", message: "It's less cold now."}];
+var reminders = [];
 var completed = [];
 
 alert("data.js");    
