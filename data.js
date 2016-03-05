@@ -61,7 +61,7 @@ function deleteDeleted() {
 function deleteReminder(index) {
 	completed.addCompleted(reminders[index]);
 	reminders.splice(index, 1);
-	save();
+	//save();
 }
 
 function stringToDate(s) {
