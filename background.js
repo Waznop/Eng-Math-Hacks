@@ -1,3 +1,5 @@
+load();
+
 chrome.alarms.onAlarm.addListener(function(alarm) {
 	var reminders = getReminders();
 	var currDate = new Date();
