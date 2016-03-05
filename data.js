@@ -54,32 +54,20 @@ function addReminder(t, m) {
 function deleteReminder(index) {
 	addCompleted(reminders[index]);
 	reminders.splice(index, 1);
-<<<<<<< HEAD
-=======
-	//save();
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 }
 
 function deleteReminders(indices) {
 	for (var i = 0; i < indices.length; i++) {
 		reminders[indices[i]].deleted = true;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 	for (var i = 0; i < reminders.length; i++) {
 		if (reminders[i].deleted) {
 			deleteReminder(i);
 			i--;
 		}
 	}
-<<<<<<< HEAD
 	save();
-=======
-	//save();
->>>>>>> 3846b075506667793525b38fefe6a235d4f28613
 }
 
 function stringToDate(s) {
